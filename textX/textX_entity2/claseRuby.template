@@ -17,4 +17,59 @@ end
 
   	end
 
-}
+  def ingresar_datos()
+  perros = [1,2,3,4,5]
+  apostadores = []
+  for i in (0..4)
+  puts "ingrese su nombre"
+  nombre = gets.chomp
+  puts "ingrese su documento"
+  documento = gets.chomp
+  puts "ingrese su edad"
+  edad = gets.chomp
+  puts "Seleccione un perro de 1-5"
+  num_perro = gets.chomp
+  ap = Apostador.new()
+  apostadores[i] = ap
+  {% for property in entity.properties %}
+  puts apostadores[i].{{property.name}}
+  
+  {% endfor %}
+
+
+end
+
+puts "BIENVENIDO A LA CARRERA DE PERROS GALGOS,"
+  puts"Compitiendo..."
+  
+  puts " \\(:v)/ \\(._.)/ \\(:v)/ \\(._.)/ \\(._.)/ \\(:v)/"
+  puts "____________________________________________________"
+  puts "       *"
+  puts "____________________________________________________"
+  puts "                       *"
+  puts "____________________________________________________"
+  puts "             *"
+  puts "____________________________________________________"
+  puts "                               *"
+  puts "____________________________________________________"
+  puts "                                          *"
+  puts "____________________________________________________"
+  
+
+  ganador = rand(1..5)
+  puts "perro ganador :" 
+  puts ganador
+  for i in (0..4)
+  if apostadores[i].num_perro == ganador.to_s
+  puts "Gano el perro el perro No. " + ganador.to_s +  " Con su apostador: " + apostadores[i].nombre  
+
+
+    end
+  end
+end
+
+ingresar_datos()
+gets()
+
+
+
