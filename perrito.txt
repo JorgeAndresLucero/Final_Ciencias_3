@@ -1,0 +1,66 @@
+class Perro
+	attr_accessor :nombre_perro, :edad_perro, :num_perro,:descripcion
+end
+
+def initialize(nombre_perro,descripcion)
+    @nombre_perro = nombre_perro
+    @descripcion = descripcion
+end
+
+def visualizar_datos_perro()
+
+	perros = [1,2,3,4,5]
+
+		puts perros[0].nombre_perro = "Firulais"
+		puts perros[0].descripcion = "Ha ganado cuatro carreras"
+
+		puts perros[1].nombre_perro = "Tomy"
+		puts perros[1].descripcion =  "Muy veloz"
+
+		puts perros[2].nombre_perro = "Motas"
+		puts perros[2].descripcion = "Ha ganado tres carreras"
+
+		puts perros[3].nombre_perro = "Chispas"
+		puts perros[3].descripcion = "Ha ganado diez carreras"
+
+		puts perros[4].nombre_perro = "Luna"
+		puts perros[4].descripcion = "Agil para pasar obstaculos"
+
+
+	for i in (0..4)
+		perrrito = Perro.new(nombre_perro,descripcion)
+		perros[i] = perrito
+		puts perros[i].nombre_perro
+		puts perros[i].descripcion
+
+end
+
+
+**************************************************************
+class {{entity.name|capitalize}}{
+	{% for property in entity.properties %}
+	attr_accesor: {{property.name}};
+	{% endfor %}
+
+
+	def initialize(
+	{% for property in entity.properties %}
+    	{% if property is entity %}
+      	@{{property.name}}
+    	{% else %}
+       	{{property.name}}
+    	{% endif %}
+  	{% endfor %}
+	)
+
+	{% for property in entity.properties %}
+    	{% if property is entity %}
+      	@{{property.name}} = {{property.name}}
+    	{% else %}
+       	@{{property.name}}={{property.name}}
+    	{% endif %}
+  	{% endfor %}
+
+  	end
+
+}

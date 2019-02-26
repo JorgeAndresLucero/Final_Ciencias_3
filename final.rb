@@ -2,7 +2,7 @@ class Apostador
 	attr_accessor :nombre, :documento, :edad, :num_perro
 end
 
-def initialize(nombre, documento, edad, num_perro)
+def initialize()
     @nombre = nombre
     @documento = documento
     @edad = edad
@@ -21,7 +21,7 @@ def ingresar_datos()
 	edad = gets.chomp
 	puts "Seleccione un perro de 1-5"
 	num_perro = gets.chomp
-	ap = Apostador.new(nombre,documento,edad,num_perro)
+	ap = Apostador.new()
 	apostadores[i] = ap
 	puts apostadores[i].nombre
 	puts apostadores[i].documento
@@ -29,31 +29,36 @@ def ingresar_datos()
 	puts apostadores[i].num_perro
 
 end
+
 puts "BIENVENIDO A LA CARRERA DE PERROS GALGOS,"
 	puts"Compitiendo..."
 	
 	puts " \\(:v)/ \\(._.)/ \\(:v)/ \\(._.)/ \\(._.)/ \\(:v)/"
-	puts "_______________"
-	puts "*"
-	puts "_______________"
-	puts "  *"
-	puts "_______________"
-	puts "    *"
-	puts "_______________"
-	puts "      *"
-	puts "_______________"
-	puts "           *"
-	puts "_______________"
+	puts "____________________________________________________"
+	puts "       *"
+	puts "____________________________________________________"
+	puts "                       *"
+	puts "____________________________________________________"
+	puts "             *"
+	puts "____________________________________________________"
+	puts "                               *"
+	puts "____________________________________________________"
+	puts "                                          *"
+	puts "____________________________________________________"
 	
+
 	ganador = rand(1..5)
 	puts "perro ganador :" 
 	puts ganador
 	for i in (0..4)
 	if apostadores[i].num_perro == ganador.to_s
 	puts "Ganó el perro el perro No. " + ganador.to_s +  " Con su apostador: " + apostadores[i].nombre	
+
+
 		end
 	end
 end
 
 ingresar_datos()
 gets()
+
