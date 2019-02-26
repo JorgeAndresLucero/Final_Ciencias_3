@@ -1,0 +1,8 @@
+entity Apostador {
+  nombre:string        // Nombre de la persona apostadora
+  documento:string    //Documento del apostador
+  edad : integer        //Edad del apostador
+  num_perro :integer    //Perro al que le apuesta
+}                     // See entity_test.py
+
+
