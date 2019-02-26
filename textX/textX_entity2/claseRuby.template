@@ -1,7 +1,8 @@
-class {{entity.name|capitalize}}{
+class {{entity.name|capitalize}}
 	{% for property in entity.properties %}
-	attr_accesor :{{property.name}};
+	attr_accessor :{{property.name}}
 	{% endfor %}
+end
 
 
 	def initialize()
