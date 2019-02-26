@@ -60,9 +60,13 @@ puts "BIENVENIDO A LA CARRERA DE PERROS GALGOS,"
   puts "perro ganador :" 
   puts ganador
   for i in (0..4)
-  if apostadores[i].num_perro == ganador.to_s
-  puts "Gano el perro el perro No. " + ganador.to_s +  " Con su apostador: " + apostadores[i].nombre  
+  {% for property in entity.properties[3:] %}
+  if apostadores[i].{{property.name}} == ganador.to_s
+  {% endfor %}
 
+  {% for property in entity.properties[:1] %}
+  puts "Gano el perro el perro No. " + ganador.to_s +  " Con su apostador: " + {{property.name}}
+  {% endfor %}
 
     end
   end
